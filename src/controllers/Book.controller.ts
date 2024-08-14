@@ -1,10 +1,11 @@
 import express, { Request, Response } from 'express';
-import { getBooks } from 'src/services/Book.services';
+import { getBooks } from '../services/book.services';
 
 const router = express.Router();
 
-router.get('/', async (req: Request, res: Response) => {
+router.get('.', async (req: Request, res: Response) => {
     try {
+        console.log('asdasd');
         const books = await getBooks();
         res.json(books);
     } catch (error) {

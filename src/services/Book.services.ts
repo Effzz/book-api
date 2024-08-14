@@ -1,5 +1,5 @@
-import { Book } from 'src/interfaces/Book.interface';
-import db from 'src/db/db';
+import { Book } from '../interfaces/book.interface';
+import db from '../db/db';
 
 export async function getBooks(): Promise<Book[]> {
     const [rows] = await db.query('SELECT * FROM books');
