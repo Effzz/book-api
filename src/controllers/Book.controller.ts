@@ -21,8 +21,9 @@ export const createBook = async (req: Request, res: Response) => {
         sendResponse(res, 201, true, newBook, 'Successfully create a new book');
     } catch (error) {
         if (error instanceof Prisma.PrismaClientValidationError) {
-            sendResponse(res, 400, false, validationResult(req), 'Failed to create book');
+            sendResponse(res, 401, false, validationResult(req), 'Failed to create book');
         } else if (error instanceof Error) {
+            console.log('error', JSON.stringify(error.message))
             sendResponse(res, 400, false, undefined, JSON.stringify(error));
         } else {
             sendResponse(res, 500, false, undefined, 'An unknown error occurred');

@@ -6,6 +6,8 @@ module.exports = {
     root: true,
     rules: {
         'prettier/prettier': ['error', {}, { usePrettierrc: true }],
-        '@typescript-eslint/no-explicit-any': 0
+        '@typescript-eslint/no-explicit-any': 0,
+        'no-undef': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
     }
 };
